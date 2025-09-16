@@ -4,12 +4,14 @@ import Input from '../../components/Input'
 import { validateEmail } from '../../utils/helper'
 import axiosInstance from '../../utils/axiosInstance'
 import { API_PATHS } from '../../utils/apiPaths'
+import { useToast } from '../../context/ToasterContext'
 
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState(null)
   const navigate = useNavigate()
+  const { addToast } = useToast()
 
   const handleLogin = async (e) => {
     e.preventDefault()
@@ -34,11 +36,14 @@ const Login = () => {
         localStorage.setItem('token', token)
         localStorage.setItem('user', JSON.stringify(user))
         navigate('/dashboard')
+        addToast('Successfuly Logged In !!', 'success')
       }
     } catch (error) {
       if (error.response && error.response.data.message) {
+        addToast(error.response.data.message, 'error')
         setError(error.response.data.message)
       } else {
+        addToast('Internal Server Error', 'error')
         setError('Internal Server Error')
       }
     }

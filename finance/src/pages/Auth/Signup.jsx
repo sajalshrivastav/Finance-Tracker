@@ -4,6 +4,7 @@ import Input from '../../components/Input'
 import { validateEmail } from '../../utils/helper'
 import axiosInstance from '../../utils/axiosInstance'
 import { API_PATHS } from '../../utils/apiPaths'
+import { useToast } from '../../context/ToasterContext'
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const Signup = () => {
     email: '',
     password: '',
   })
+  const { addToast } = useToast()
   const [error, setError] = useState(null)
   const navigate = useNavigate()
 
@@ -46,8 +48,10 @@ const Signup = () => {
         email: formData.email,
         password: formData.password,
       })
+      addToast('User Created Sucessfully!!! you can login Now', 'success')
       console.log('User Created Sucessfully!!! you can login Now')
     } catch (error) {
+      addToast('Not able to create User Please try again', 'error')
       console.log('Not able to create User Please try again', error)
     }
   }
