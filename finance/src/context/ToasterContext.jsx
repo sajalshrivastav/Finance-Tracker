@@ -1,32 +1,40 @@
-import React, { createContext, useContext, useState } from 'react'
-import Toaster from '../components/Toaster'
+import React, { createContext, useContext, useState, useCallback } from 'react'
 
-const ToastContext = createContext()
+const ToastContext = createContext() // no default value
 
 export function ToastProvider({ children }) {
   const [toasts, setToasts] = useState([])
 
-  const addToast = (message, type, duration = 300000) => {
-    const id = Math.random().toString(36).substr(2, 9)
-    setToasts((prev) => [...prev, { id, message, type, duration }])
-    setTimeout(() => removeToast(id), duration)
-  }
-  const removeToast = (id) => {
-    setToasts((prev) => prev.filter((toast) => toast.id !== id))
-  }
+  // ---------- add a toast ----------
+  const addToast = useCallback(
+    (message, type = 'info', duration = 3000) => {
+      const id = Math.random().toString(36).substr(2, 9)
+      setToasts((prev) => [...prev, { id, message, type, duration }])
+      // auto‑remove after the given duration
+      setTimeout(() => removeToast(id), duration)
+    },
+    [], // no external deps
+  )
+
+  // ---------- remove a toast ----------
+  const removeToast = useCallback((id) => {
+    setToasts((prev) => prev.filter((t) => t.id !== id))
+  }, [])
+
+  // Provider only supplies state‑management; UI is rendered elsewhere
   return (
-    <ToastContext.Provider value={{ toasts, addToast }}>
+    <ToastContext.Provider value={{ toasts, addToast, removeToast }}>
       {children}
-      <Toaster toasts={toasts} />
     </ToastContext.Provider>
   )
 }
+
+// ---------- custom hook ----------
 export const useToast = () => {
-  const context = useContext(ToastContext)
-  console.log('context ', context)
-  if (!context) {
-    console.log('Getting error for context provider')
-    // throw new Error('useToast must be used within a ToastProvider')
+  const ctx = useContext(ToastContext)
+  if (!ctx) {
+    // Throw a clear error – you’ll see this in the console if you ever forget to wrap something
+    throw new Error('useToast must be used within a ToastProvider')
   }
-  return context
+  return ctx
 }

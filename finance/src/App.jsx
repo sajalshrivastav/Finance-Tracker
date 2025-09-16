@@ -25,28 +25,26 @@ import { ToastProvider } from './context/ToasterContext'
 const App = () => {
   return (
     <div>
-      <ToastProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Root />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<DashboardLayout />}>
-              <Route index element={<Home />} />
-              <Route path="transactions" element={<Transactions />}></Route>
-              <Route path="budget" element={<Budget />}></Route>
-              <Route path="analysis" element={<Report />}></Route>
-              <Route path="savings" element={<Savings />}></Route>
-              <Route path="debt" element={<Debt />}></Route>
-              <Route path="Ai-Chat" element={<AICHAT />}></Route>
-              <Route path="admin" element={<Admin />}></Route>
-              <Route path="setting" element={<Settings />}></Route>
-              {/* <Route path="cards" element={<Cards />} />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Root />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<Home />} />
+            <Route path="transactions" element={<Transactions />}></Route>
+            <Route path="budget" element={<Budget />}></Route>
+            <Route path="analysis" element={<Report />}></Route>
+            <Route path="savings" element={<Savings />}></Route>
+            <Route path="debt" element={<Debt />}></Route>
+            <Route path="Ai-Chat" element={<AICHAT />}></Route>
+            <Route path="admin" element={<Admin />}></Route>
+            <Route path="setting" element={<Settings />}></Route>
+            {/* <Route path="cards" element={<Cards />} />
             <Route path="income" element={<Incone />} /> */}
-            </Route>
-          </Routes>
-        </Router>
-      </ToastProvider>
+          </Route>
+        </Routes>
+      </Router>
     </div>
   )
 }

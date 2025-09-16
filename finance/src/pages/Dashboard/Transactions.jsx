@@ -14,7 +14,7 @@ const Transactions = () => {
       Transactions
       <button
         onClick={handleClick}
-        className="p-2 text-white rounded-lg bg-zinc-600 shadow-lg "
+        className="p-2 text-white rounded-lg cursor-pointer bg-zinc-600 shadow-lg "
       >
         Toaster
       </button>
