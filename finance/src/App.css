@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+.login-container {
+    @apply flex justify-end h-screen items-center;
+}
+
+.highlight-selection {
+    background-color: #baf49c
+}
+
+.dark-green {
+    background-color: #1d4840;
+}
+
+.light-green-tint {
+    background-color: #ecf5e9
+}
+
+.dark-color {
+    color: #001400;
+}
+
+/* color: #3a5443; */
+
+.inactive-color {
+    color: #5b615a
+}
+
+.soft-red-color {
+    background-color: #f6bbbd;
+}
+
+.dark-red-color {
+    background-color: #b65b68;
+}
+
+.grey-color {
+    background-color: #f0f0f0;
+}
+
+.bright-red {
+    background-color: #ff3945;
+}
+
+.input-box {
+    @apply w-full rounded px-4 py-3 mb-4 mt-3 border border-slate-200 outline-none flex justify-between gap-3 text-sm text-black bg-slate-100
+}
+
+.sidebar {
+    @apply min-h-screen w-[200px];
+    /* width: 200px;
+    background: #f4f4f4;
+    border-right: 1px solid #ddd;
+    min-height: 100vh; */
+}
+
+.sidebar-item {
+    padding: 15px;
+    transition: background 0.2s;
+}
