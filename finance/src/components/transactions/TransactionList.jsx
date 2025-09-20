@@ -3,7 +3,334 @@ import axiosInstance from '../../utils/axiosInstance'
 import { API_PATHS } from '../../utils/apiPaths'
 
 const TransactionList = () => {
-  const [transactionList, setTransactionList] = useState([])
+  let data = [
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+    {
+      _id: {
+        $oid: '68bd763e95518d50c27301f8',
+      },
+      type: 'Expense',
+      category: 'Food',
+      subCategory: 'Restaurant',
+      amount: 1500,
+      currency: 'INR',
+      paymentMethod: 'upi',
+      notes: 'Dinner with friends',
+      tags: ['weekend', 'fun'],
+      isRecurring: false,
+      transactionDate: {
+        $date: '2023-09-01T00:00:00.000Z',
+      },
+      userId: '68bc6c9093d1045aa8056738',
+    },
+  ]
+  const [transactionList, setTransactionList] = useState(data)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const getTransactionList = async () => {
@@ -21,7 +348,7 @@ const TransactionList = () => {
       setTransactionList(data.transactions)
     } catch (error) {
       console.log('error is comming', error)
-      setError('Failed to load transactions.')
+      // setError('Failed to load transactions.')
     } finally {
       setLoading(false)
     }
