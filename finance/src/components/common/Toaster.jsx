@@ -7,7 +7,7 @@ import {
   LucideShieldClose,
   Icon,
 } from 'lucide-react'
-import { useToast } from '../context/ToasterContext'
+import { useToast } from '../../context/ToasterContext'
 
 const getIcon = (type) => {
   switch (type) {
