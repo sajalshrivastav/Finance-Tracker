@@ -1,7 +1,14 @@
-import React from 'react'
+// import React from 'react'
 
-const Table = () => {
-  return <div>Table</div>
-}
+// const Table = () => {
+//     let tableHeaders = ['S.No' , '']
+//     return <div>
+//         Table
+//         <table>
+//             <thead></thead>
+//             <tbody></tbody>
+//         </table>
+//     </div>
+// }
 
-export default Table
+// export default Table

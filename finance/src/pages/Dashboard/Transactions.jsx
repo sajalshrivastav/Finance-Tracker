@@ -18,8 +18,13 @@ const Transactions = () => {
   return (
     <div>
       {/* Transactions */}
-      <TotalTransactionCard totalAmount={10000} currency={'INR'} />
-      <div className="flex items-center w-full max-w-2xl my-4">
+      <div className="flex justify-between items-center ">
+        <div className="text-3xl text-[#1d4840]">
+          Hello Sajal Let's Check some expense{' '}
+        </div>
+        <TotalTransactionCard totalAmount={10000} currency={'INR'} />
+      </div>
+      <div className="flex items-center w-full max-w-7xl my-4">
         <button
           onClick={scrollLeft}
           className="px-1 py-1 rounded-full bg-white hover:bg-gray-300 transition-colors duration-200"
