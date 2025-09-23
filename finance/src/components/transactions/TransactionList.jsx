@@ -372,26 +372,57 @@ const TransactionList = () => {
     return <p className="text-gray-500">No transactions found.</p>
   }
   return (
-    <div className="overflow-x-auto w-3/8 p-4   ">
-      data show
-      <div className=" px-3 m-1 h-auto rounded-xl">
-        {transactionList.map((listData, index) => (
-          <div className="p-4 flex shadow-2xl rounded-xl " key={listData._id}>
-            {listData.category} {listData.transactionDate.$date}
-            {listData.paymentMethod}
-            <div>
-              {listData.type === 'Received' ? (
-                <ArrowDownLeft color="red" />
-              ) : (
-                <ArrowUpRight color="green" />
-              )}
-              {listData.amount}
-            </div>
-          </div>
-        ))}
+    <div className="overflow-y-auto w-5/9 p-4   ">
+      <div className=" px-3 shadow rounded-2xl  m-1 h-auto">
+        <table>
+          <thead>
+            <tr>
+              <th className="px-4 py-2 text-left">Type</th>
+              <th className="px-4 py-2 text-left">Category</th>
+              <th className="px-4 py-2 text-left">Date</th>
+              <th className="px-4 py-2 text-left">Payment</th>
+              <th className="px-4 py-2 text-left">Notes</th>
+              <th className="px-4 py-2 text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-gray-200 max-h-[500px] overflow-y-auto">
+            {transactionList.map((tx) => (
+              <tr key={tx._id.$oid} className="hover:bg-gray-50">
+                <td className="px-4 py-2 flex items-center gap-2">
+                  {tx.type === 'Received' ? (
+                    <ArrowDownLeft className="text-green-600" size={16} />
+                  ) : (
+                    <ArrowUpRight className="text-red-600" size={16} />
+                  )}
+                  {tx.type}
+                </td>
+                <td className="px-4 py-2">{tx.category}</td>
+                <td className="px-4 py-2">
+                  {new Date(tx.transactionDate.$date).toLocaleDateString()}
+                </td>
+                <td className="px-4 py-2 capitalize">{tx.paymentMethod}</td>
+                <td className="px-4 py-2 text-gray-500">{tx.notes}</td>
+                <td className="px-4 py-2 text-right font-semibold">
+                  ₹{tx.amount.toLocaleString()}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   )
 }
 
 export default TransactionList
+
+{
+  /* <div>
+  {listData.type === 'Received' ? (
+    <ArrowDownLeft color="red" />
+  ) : (
+    <ArrowUpRight color="green" />
+  )}
+  {listData.amount}
+</div> */
+}
